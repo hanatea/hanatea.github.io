@@ -1,2 +1,962 @@
-<h1>茶道教室へようこそ</h1>
-<p>準備中です。</p>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>表千家 茶道教室｜山梨県甲府市</title>
+
+  <meta name="description"
+        content="山梨県甲府市で学ぶ表千家茶道。季節を感じ、一服のお茶と向き合う時間を。">
+
+  <style>
+    /* =========================
+       基本設定
+    ========================= */
+
+    :root {
+      --green: #26382f;
+      --green-light: #405348;
+      --cream: #f5f2ea;
+      --white: #faf9f5;
+      --text: #292925;
+      --gold: #a28b61;
+      --line: rgba(38, 56, 47, 0.2);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        "Noto Serif JP",
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.9;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* =========================
+       ヘッダー
+    ========================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 22px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      color: white;
+      mix-blend-mode: normal;
+    }
+
+    .logo {
+      font-size: 18px;
+      letter-spacing: 0.3em;
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+      font-family: sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+    }
+
+    nav a {
+      transition: opacity 0.3s;
+    }
+
+    nav a:hover {
+      opacity: 0.55;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      height: 100vh;
+      min-height: 650px;
+      position: relative;
+      color: white;
+      overflow: hidden;
+      background: #26382f;
+    }
+
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(
+          rgba(15, 25, 20, 0.38),
+          rgba(15, 25, 20, 0.58)
+        ),
+        url("images/hero.jpg");
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.02);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 10%;
+    }
+
+    .hero-copy {
+      max-width: 750px;
+    }
+
+    .hero-small {
+      font-family: sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.4em;
+      margin-bottom: 28px;
+      opacity: 0.85;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 86px);
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      line-height: 1.45;
+    }
+
+    .hero-sub {
+      margin-top: 28px;
+      font-size: 16px;
+      letter-spacing: 0.12em;
+    }
+
+    .hero-location {
+      position: absolute;
+      right: 5%;
+      bottom: 55px;
+
+      writing-mode: vertical-rl;
+      font-family: sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      opacity: 0.8;
+    }
+
+    .scroll {
+      position: absolute;
+      left: 5%;
+      bottom: 45px;
+      font-family: sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.25em;
+      writing-mode: vertical-rl;
+    }
+
+    .scroll::after {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 55px;
+      background: white;
+      margin: 12px auto 0;
+      opacity: 0.6;
+    }
+
+    /* =========================
+       共通
+    ========================= */
+
+    section {
+      padding: 130px 8%;
+    }
+
+    .section-label {
+      font-family: sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      color: var(--gold);
+      margin-bottom: 25px;
+    }
+
+    .section-title {
+      font-size: clamp(30px, 4vw, 48px);
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      line-height: 1.5;
+    }
+
+    .section-lead {
+      margin-top: 30px;
+      max-width: 650px;
+      font-size: 15px;
+      line-height: 2.3;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about {
+      background: var(--cream);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10%;
+      align-items: center;
+    }
+
+    .about-image {
+      height: 600px;
+    }
+
+    .about-text {
+      padding-right: 5%;
+    }
+
+    /* =========================
+       MESSAGE
+    ========================= */
+
+    .message {
+      background: var(--green);
+      color: white;
+      text-align: center;
+      padding: 150px 8%;
+    }
+
+    .message-inner {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .message h2 {
+      font-size: clamp(28px, 4vw, 50px);
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      line-height: 1.8;
+    }
+
+    .message p {
+      margin-top: 35px;
+      font-size: 14px;
+      line-height: 2.4;
+      opacity: 0.85;
+    }
+
+    /* =========================
+       LESSON
+    ========================= */
+
+    .lesson {
+      background: var(--white);
+    }
+
+    .lesson-head {
+      margin-bottom: 70px;
+    }
+
+    .lesson-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .lesson-card {
+      border-top: 1px solid var(--line);
+      padding-top: 25px;
+    }
+
+    .lesson-number {
+      font-family: sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+    }
+
+    .lesson-card h3 {
+      margin-top: 25px;
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+    }
+
+    .lesson-card p {
+      margin-top: 18px;
+      font-size: 13px;
+      line-height: 2.1;
+    }
+
+    /* =========================
+       PHOTO
+    ========================= */
+
+    .photo-section {
+      padding: 0;
+      background: var(--green);
+    }
+
+    .large-photo {
+      height: 75vh;
+      min-height: 500px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .large-photo img {
+      height: 100%;
+      object-position: center;
+      opacity: 0.9;
+    }
+
+    .photo-caption {
+      position: absolute;
+      left: 8%;
+      bottom: 55px;
+      color: white;
+    }
+
+    .photo-caption span {
+      font-family: sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+    }
+
+    .photo-caption h2 {
+      margin-top: 10px;
+      font-size: 30px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+    }
+
+    /* =========================
+       TEACHER
+    ========================= */
+
+    .teacher {
+      background: var(--cream);
+    }
+
+    .teacher-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 10%;
+      align-items: center;
+    }
+
+    .teacher-image {
+      height: 520px;
+    }
+
+    .teacher-name {
+      margin-top: 35px;
+      font-size: 28px;
+      letter-spacing: 0.15em;
+    }
+
+    /* =========================
+       ACCESS
+    ========================= */
+
+    .access {
+      background: var(--white);
+    }
+
+    .access-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10%;
+    }
+
+    .access-info {
+      margin-top: 45px;
+    }
+
+    .info-row {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      border-top: 1px solid var(--line);
+      padding: 20px 0;
+      font-size: 13px;
+    }
+
+    .info-row:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .map-placeholder {
+      height: 420px;
+      background: #ddd8cb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-family: sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact {
+      background: var(--green);
+      color: white;
+      text-align: center;
+    }
+
+    .contact .section-label {
+      color: #c3b18a;
+    }
+
+    .contact h2 {
+      font-size: clamp(30px, 5vw, 60px);
+      font-weight: 400;
+      letter-spacing: 0.15em;
+    }
+
+    .contact p {
+      margin: 30px auto 45px;
+      font-size: 14px;
+      opacity: 0.85;
+    }
+
+    .contact-button {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,0.6);
+      padding: 17px 55px;
+      font-family: sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      transition: all 0.3s;
+    }
+
+    .contact-button:hover {
+      background: white;
+      color: var(--green);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #1b2923;
+      color: white;
+      padding: 40px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer .footer-logo {
+      font-size: 15px;
+      letter-spacing: 0.2em;
+    }
+
+    footer small {
+      font-family: sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      opacity: 0.55;
+    }
+
+    /* =========================
+       スマホ
+    ========================= */
+
+    @media (max-width: 768px) {
+
+      header {
+        padding: 20px 6%;
+      }
+
+      .logo {
+        font-size: 15px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero-content {
+        padding: 0 8%;
+      }
+
+      .hero h1 {
+        font-size: 43px;
+        letter-spacing: 0.12em;
+      }
+
+      .hero-sub {
+        font-size: 13px;
+      }
+
+      section {
+        padding: 90px 7%;
+      }
+
+      .about-grid,
+      .teacher-grid,
+      .access-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .about-image {
+        height: 420px;
+        order: -1;
+      }
+
+      .lesson-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .message {
+        padding: 100px 8%;
+      }
+
+      .large-photo {
+        height: 65vh;
+      }
+
+      .teacher-image {
+        height: 420px;
+      }
+
+      .map-placeholder {
+        height: 300px;
+      }
+
+      footer {
+        padding: 30px 7%;
+        display: block;
+      }
+
+      footer small {
+        display: block;
+        margin-top: 15px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header>
+    <a href="#" class="logo">表千家</a>
+
+    <nav>
+      <a href="#about">ABOUT</a>
+      <a href="#lesson">LESSON</a>
+      <a href="#teacher">TEACHER</a>
+      <a href="#access">ACCESS</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="hero">
+
+    <div class="hero-image"></div>
+
+    <div class="hero-content">
+
+      <div class="hero-copy">
+
+        <div class="hero-small">
+          OMOTESENKE / TEA CEREMONY
+        </div>
+
+        <h1>
+          茶の湯を、<br>
+          暮らしの中へ。
+        </h1>
+
+        <p class="hero-sub">
+          表千家 茶道教室
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="hero-location">
+      YAMANASHI / KOFU
+    </div>
+
+    <div class="scroll">
+      SCROLL
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       ABOUT
+  ========================== -->
+
+  <section class="about" id="about">
+
+    <div class="about-grid">
+
+      <div class="about-text">
+
+        <div class="section-label">
+          ABOUT
+        </div>
+
+        <h2 class="section-title">
+          一服のお茶から、<br>
+          季節を感じる。
+        </h2>
+
+        <p class="section-lead">
+          茶の湯は、お茶を点てる技術だけを学ぶものではありません。
+          季節の移ろい、道具の取り合わせ、相手を思う心。
+          一つひとつの所作を通して、日本の美意識に触れていきます。
+          <br><br>
+          山梨県甲府市で、表千家の茶道を丁寧に学んでいただける
+          お稽古の場をひらいています。
+        </p>
+
+      </div>
+
+      <div class="about-image">
+        <img src="images/about.jpg" alt="茶室">
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       MESSAGE
+  ========================== -->
+
+  <section class="message">
+
+    <div class="message-inner">
+
+      <div class="section-label">
+        CHANOYU
+      </div>
+
+      <h2>
+        慌ただしい日々の中に、<br>
+        静かに向き合う時間を。
+      </h2>
+
+      <p>
+        湯の音。茶筅の音。<br>
+        季節を映す一碗。<br>
+        その一つひとつを大切に。
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       LESSON
+  ========================== -->
+
+  <section class="lesson" id="lesson">
+
+    <div class="lesson-head">
+
+      <div class="section-label">
+        LESSON
+      </div>
+
+      <h2 class="section-title">
+        お稽古について
+      </h2>
+
+      <p class="section-lead">
+        初めて茶道に触れる方から、経験のある方まで。
+        一人ひとりのペースに合わせてお稽古を行います。
+      </p>
+
+    </div>
+
+
+    <div class="lesson-grid">
+
+      <div class="lesson-card">
+
+        <div class="lesson-number">
+          01
+        </div>
+
+        <h3>
+          基本の所作
+        </h3>
+
+        <p>
+          お辞儀や歩き方、道具の扱い方など、
+          茶道の基本となる所作から丁寧に学びます。
+        </p>
+
+      </div>
+
+
+      <div class="lesson-card">
+
+        <div class="lesson-number">
+          02
+        </div>
+
+        <h3>
+          お点前
+        </h3>
+
+        <p>
+          薄茶を中心に、お茶を点てるための
+          一つひとつの手順と意味を学びます。
+        </p>
+
+      </div>
+
+
+      <div class="lesson-card">
+
+        <div class="lesson-number">
+          03
+        </div>
+
+        <h3>
+          季節を楽しむ
+        </h3>
+
+        <p>
+          道具や掛物、花などを通して、
+          季節とともにある茶の湯の文化を楽しみます。
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PHOTO
+  ========================== -->
+
+  <section class="photo-section">
+
+    <div class="large-photo">
+
+      <img src="images/tea.jpg" alt="茶道具">
+
+      <div class="photo-caption">
+
+        <span>THE BEAUTY OF CHANOYU</span>
+
+        <h2>
+          一期一会
+        </h2>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       TEACHER
+  ========================== -->
+
+  <section class="teacher" id="teacher">
+
+    <div class="teacher-grid">
+
+      <div class="teacher-image">
+
+        <img src="images/teacher.jpg" alt="茶道教室">
+
+      </div>
+
+
+      <div>
+
+        <div class="section-label">
+          TEACHER
+        </div>
+
+        <h2 class="section-title">
+          主宰者について
+        </h2>
+
+        <p class="teacher-name">
+          ○○ ○○
+        </p>
+
+        <p class="section-lead">
+          表千家にて茶道を学び、山梨県甲府市で
+          お稽古を行っています。
+          <br><br>
+          茶道が初めての方にも、安心して
+          茶の湯に触れていただけるよう、
+          丁寧なお稽古を心がけています。
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       ACCESS
+  ========================== -->
+
+  <section class="access" id="access">
+
+    <div class="access-grid">
+
+      <div>
+
+        <div class="section-label">
+          ACCESS
+        </div>
+
+        <h2 class="section-title">
+          お稽古場
+        </h2>
+
+        <div class="access-info">
+
+          <div class="info-row">
+            <span>所在地</span>
+            <span>
+              山梨県甲府市<br>
+              ※詳細はお問い合わせください
+            </span>
+          </div>
+
+          <div class="info-row">
+            <span>お稽古</span>
+            <span>
+              月○回
+            </span>
+          </div>
+
+          <div class="info-row">
+            <span>時間</span>
+            <span>
+              ○○:○○〜○○:○○
+            </span>
+          </div>
+
+          <div class="info-row">
+            <span>対象</span>
+            <span>
+              初心者歓迎
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="map-placeholder">
+        MAP / Google Mapsを後から設置
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CONTACT
+  ========================== -->
+
+  <section class="contact" id="contact">
+
+    <div class="section-label">
+      CONTACT
+    </div>
+
+    <h2>
+      茶の湯を、<br>
+      はじめてみませんか。
+    </h2>
+
+    <p>
+      見学・体験についてのお問い合わせはこちらから。
+    </p>
+
+    <a href="mailto:example@example.com" class="contact-button">
+      CONTACT
+    </a>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="footer-logo">
+      表千家 茶道教室
+    </div>
+
+    <small>
+      © OMOTESENKE TEA CEREMONY / KOFU, YAMANASHI
+    </small>
+
+  </footer>
+
+</body>
+</html>
