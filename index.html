@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
   <title>甲府善光寺 表千家茶道教室 貴久庵</title>
   <meta name="description"
         content="山梨県甲府市の表千家茶道教室「貴久庵」。茶の湯を通じて季節を感じ、日常とは離れた静かな時間をお過ごしいただけます。">
@@ -50,7 +51,6 @@
       object-fit: cover;
     }
 
-
     /* =========================
        HEADER
     ========================== */
@@ -89,7 +89,6 @@
     nav a:hover {
       opacity: 0.55;
     }
-
 
     /* =========================
        HERO
@@ -185,7 +184,6 @@
       opacity: 0.6;
     }
 
-
     /* =========================
        COMMON
     ========================== */
@@ -215,7 +213,6 @@
       font-size: 15px;
       line-height: 2.3;
     }
-
 
     /* =========================
        ABOUT
@@ -247,7 +244,6 @@
       object-position: center;
     }
 
-
     /* =========================
        TEA IMAGE
     ========================== */
@@ -272,7 +268,6 @@
       height: 100%;
       object-position: center;
     }
-
 
     /* =========================
        MESSAGE
@@ -303,7 +298,6 @@
       line-height: 2.4;
       opacity: 0.85;
     }
-
 
     /* =========================
        LESSON
@@ -360,7 +354,6 @@
       line-height: 2.1;
     }
 
-
     /* =========================
        TEACHER
     ========================== */
@@ -391,7 +384,6 @@
       font-size: 28px;
       letter-spacing: 0.15em;
     }
-
 
     /* =========================
        ACCESS
@@ -440,7 +432,6 @@
       text-align: center;
     }
 
-
     /* =========================
        CONTACT
     ========================== */
@@ -482,7 +473,6 @@
       color: var(--green);
     }
 
-
     /* =========================
        FOOTER
     ========================== */
@@ -507,7 +497,6 @@
       letter-spacing: 0.1em;
       opacity: 0.55;
     }
-
 
     /* =========================
        MOBILE
@@ -600,6 +589,32 @@
 
 <body>
 
+<script>
+(function() {
+  const password = "kikyuan2026";
+
+  const input = prompt("パスワードを入力してください");
+
+  if (input !== password) {
+    document.body.innerHTML = `
+      <div style="
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+        font-family:'Yu Mincho',serif;
+        background:#f5f2ea;
+        color:#26382f;
+        font-size:20px;
+      ">
+        閲覧できません
+      </div>
+    `;
+    throw new Error("Unauthorized");
+  }
+})();
+</script>
+
   <!-- =========================
        HEADER
   ========================== -->
@@ -617,7 +632,6 @@
       <a href="#contact">CONTACT</a>
     </nav>
   </header>
-
 
   <!-- =========================
        HERO
@@ -657,7 +671,6 @@
     </div>
 
   </section>
-
 
   <!-- =========================
        ABOUT
@@ -719,7 +732,6 @@
 
   </section>
 
-
   <!-- =========================
        TEA PHOTO
   ========================== -->
@@ -762,7 +774,6 @@
 
   </section>
 
-
   <!-- =========================
        MESSAGE
   ========================== -->
@@ -790,7 +801,6 @@
 
   </section>
 
-
   <!-- =========================
        LESSON
   ========================== -->
@@ -814,7 +824,6 @@
 
     </div>
 
-
     <!-- 稽古写真 -->
 
     <div class="lesson-photo">
@@ -825,7 +834,6 @@
       >
 
     </div>
-
 
     <!-- 稽古内容 -->
 
@@ -848,7 +856,6 @@
 
       </div>
 
-
       <div class="lesson-card">
 
         <div class="lesson-number">
@@ -865,7 +872,6 @@
         </p>
 
       </div>
-
 
       <div class="lesson-card">
 
@@ -887,7 +893,6 @@
     </div>
 
   </section>
-
 
   <!-- =========================
        TEACHER
@@ -936,7 +941,6 @@
     </div>
 
   </section>
-
 
   <!-- =========================
        ACCESS / LESSON INFO
@@ -1014,7 +1018,6 @@
 
       </div>
 
-
       <div class="map-placeholder">
         MAP<br>
         Google Mapsを後から設置
@@ -1023,7 +1026,6 @@
     </div>
 
   </section>
-
 
   <!-- =========================
        CONTACT
@@ -1053,7 +1055,6 @@
     </a>
 
   </section>
-
 
   <!-- =========================
        FOOTER
